@@ -104,7 +104,39 @@ public class UserController {
 
 /*
 
+{
+    "name": "Carlos",
+    "surname": "Gonzalez",
+    "correo": "carlos.gonzalez@example.com",
+    "password": "CarlosG123",
+    "phone": "9876543210",
+    "dni": "87654321Z",
+    "tipoDeCuenta": "standard",
+    "premium": "no"
+}
 
+{
+    "name": "Maria",
+    "surname": "Lopez",
+    "correo": "maria.lopez@example.com",
+    "password": "MariaL123",
+    "phone": "1234567890",
+    "dni": "23456789X",
+    "tipoDeCuenta": "premium",
+    "premium": "si"
+}
+
+
+{
+    "name": "Ana",
+    "surname": "Garcia",
+    "correo": "ana.garcia@example.com",
+    "password": "AnaG123",
+    "phone": "5678901234",
+    "dni": "45678901A",
+    "tipoDeCuenta": "premium",
+    "premium": "si"
+}
 
 
  */
