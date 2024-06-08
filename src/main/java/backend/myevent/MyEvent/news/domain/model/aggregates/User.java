@@ -3,17 +3,15 @@ package backend.myevent.MyEvent.news.domain.model.aggregates;
 import backend.myevent.MyEvent.news.domain.model.commands.CreateUserCommand;
 import jakarta.persistence.*;
 import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.domain.AbstractAggregateRoot;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 @Getter
+@Setter
 @Entity
 @EntityListeners(AuditingEntityListener.class)
-
 public class User extends AbstractAggregateRoot<User> {
-
-    //Creacion de las tablas usando los parametros usados en el diagrama de clases
-    // ID, NAME, SURNAME, ADDRESS, PHONE, CORREO, BIRTHDAY, CREATEDAYACCOUNT, CONTRASEÑA
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,7 +35,6 @@ public class User extends AbstractAggregateRoot<User> {
     @Column(nullable = false)
     private String phone;
 
-    /** The API key for the news source. */
     @Column(nullable = false)
     private String newsApiKey;
 
@@ -52,5 +49,4 @@ public class User extends AbstractAggregateRoot<User> {
         this.phone = String.valueOf(command.phone());
         this.newsApiKey = command.newsApiKey();
     }
-
 }
