@@ -7,12 +7,12 @@ public class CreateUserCommandFromResourceAssembler {
 
     public static CreateUserCommand toCommandFromResource(CreateUserResource resource) {
         return new CreateUserCommand(
-            resource.name(),
-            resource.surname(),
-            resource.address(),
-            resource.phone(),
-            resource.correo(),
-            resource.password(),
-            resource.newsApiKey());
+                resource.name(),
+                resource.surname(),
+                resource.address(),
+                resource.phone(),
+                resource.correo(),
+                resource.password(),
+                resource.newsApiKey());
     }
 }
