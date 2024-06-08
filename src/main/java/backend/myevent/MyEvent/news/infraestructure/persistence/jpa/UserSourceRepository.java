@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserSourceRepository extends JpaRepository<User, Long>{
-    List<User> findAllByNewsApiKey(String newsApiKey);
     boolean existsByNameAndSurname(String name, String surname );
     Optional<User> findByNameAndSurname(String name, String surname);
     Optional<User> findByCorreo(String correo);

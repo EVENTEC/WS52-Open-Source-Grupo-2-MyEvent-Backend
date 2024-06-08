@@ -8,7 +8,6 @@ import java.util.Optional;
 import java.util.List;
 
 public interface UserQueryService {
-    List<User> handle(GetAllUserByNewsApiKeyQuery query);
     Optional<User> handle(GetUserByIdQuery query);
     Optional<User> handle(GetUserByNameAndSurnameQuery query);
     Optional<User> handle(GetUserByCorreoQuery query);
