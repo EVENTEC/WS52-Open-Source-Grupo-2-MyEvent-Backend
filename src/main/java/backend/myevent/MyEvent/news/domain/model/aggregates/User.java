@@ -7,6 +7,8 @@ import lombok.Setter;
 import org.springframework.data.domain.AbstractAggregateRoot;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.time.LocalDate;
+
 @Getter
 @Setter
 @Entity
@@ -30,13 +32,20 @@ public class User extends AbstractAggregateRoot<User> {
     private String password;
 
     @Column(nullable = false)
-    private String address;
-
-    @Column(nullable = false)
     private String phone;
 
+    // Nuevos campos
     @Column(nullable = false)
-    private String newsApiKey;
+    private String dni;
+
+    @Column(nullable = false)
+    private String tipoDeCuenta;
+
+    @Column(nullable = false)
+    private String premium;
+
+    @Column(nullable = false, updatable = false)
+    private LocalDate dayCreate;
 
     protected User() {}
 
@@ -45,8 +54,10 @@ public class User extends AbstractAggregateRoot<User> {
         this.surname = command.surname();
         this.correo = command.correo();
         this.password = command.password();
-        this.address = command.address();
         this.phone = String.valueOf(command.phone());
-        this.newsApiKey = command.newsApiKey();
+        this.dni = command.dni();
+        this.tipoDeCuenta = command.tipoDeCuenta();
+        this.premium = command.premium();
+        this.dayCreate = LocalDate.now(); // Se genera automáticamente al crear el usuario
     }
 }

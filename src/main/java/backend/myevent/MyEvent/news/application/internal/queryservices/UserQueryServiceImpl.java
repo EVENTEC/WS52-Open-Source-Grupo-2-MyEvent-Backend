@@ -21,11 +21,6 @@ public class UserQueryServiceImpl implements UserQueryService{
     }
 
     @Override
-    public List<User> handle(GetAllUserByNewsApiKeyQuery query) {
-        return userSourceRepository.findAllByNewsApiKey(query.newsApiKey());
-    }
-
-    @Override
     public Optional<User> handle(GetUserByIdQuery query) {
         return userSourceRepository.findById(query.id());
     }
