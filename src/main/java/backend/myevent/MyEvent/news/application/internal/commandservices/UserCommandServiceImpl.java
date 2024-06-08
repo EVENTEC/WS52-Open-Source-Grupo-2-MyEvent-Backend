@@ -28,4 +28,37 @@ public class UserCommandServiceImpl implements UserCommandService {
         return Optional.of(createdUser);
     }
 
+    @Override
+    public void handleDeleteUser(String name, String password) {
+        Optional<User> user = userSourceRepository.findByNameAndPassword(name, password);
+        user.ifPresent(userSourceRepository::delete);
+    }
+
+    @Override
+    public void handleChangeUserPassword(Long id, String correo, String newPassword) {
+        Optional<User> user = userSourceRepository.findByIdAndCorreo(id, correo);
+        if(user.isPresent()){
+            User existingUser = user.get();
+            existingUser.setPassword(newPassword);
+            userSourceRepository.save(existingUser);
+        } else {
+            throw new IllegalArgumentException("User not found");
+        }
+    }
+
+    @Override
+    public void handleChangeUserName(Long id, String correo, String currentPassword, String newName) {
+        Optional<User> user = userSourceRepository.findByIdAndCorreo(id, correo);
+        if(user.isPresent()){
+            User existingUser = user.get();
+            if(existingUser.getPassword().equals(currentPassword)) {
+                existingUser.setName(newName);
+                userSourceRepository.save(existingUser);
+            } else {
+                throw new IllegalArgumentException("Incorrect password");
+            }
+        } else {
+            throw new IllegalArgumentException("User not found");
+        }
+    }
 }
