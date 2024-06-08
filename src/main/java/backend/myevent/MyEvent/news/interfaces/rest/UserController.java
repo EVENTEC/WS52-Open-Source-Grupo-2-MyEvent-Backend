@@ -13,12 +13,13 @@ import backend.myevent.MyEvent.news.interfaces.rest.transform.UserResourceFromEn
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.CREATED;
-
+@CrossOrigin(origins = "http://localhost:4200/   ")
 @RestController
 @RequestMapping("/api/v1/users")
 public class UserController {
@@ -68,10 +69,12 @@ public class UserController {
     //getmapping de todos los usuarios
     //url: http://localhost:8080/api/v1/users/all
     @GetMapping("/all")
-    public ResponseEntity<List<UserResource>> getAllUsers() {
+    public ResponseEntity<Map<String, List<UserResource>>> getAllUsers() {
         List<User> users = userQueryService.handle(new GetAllUsersQuery());
         List<UserResource> userResources = UserResourceFromEntityAssembler.toResourceFromEntityList(users);
-        return ResponseEntity.ok(userResources);
+        Map<String, List<UserResource>> response = new HashMap<>();
+        response.put("users", userResources);
+        return ResponseEntity.ok(response);
     }
 
     //delete mapping para eliminar un usuario
@@ -98,3 +101,10 @@ public class UserController {
         return ResponseEntity.noContent().build();
     }
 }
+
+/*
+
+
+
+
+ */

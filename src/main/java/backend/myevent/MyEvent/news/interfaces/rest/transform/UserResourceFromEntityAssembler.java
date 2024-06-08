@@ -12,11 +12,12 @@ public class UserResourceFromEntityAssembler{
         return new UserResource(
                 entity.getName(),
                 entity.getSurname(),
-                entity.getAddress(),
-                entity.getPhone(),
                 entity.getCorreo(),
                 entity.getPassword(),
-                entity.getNewsApiKey());
+                entity.getPhone(),
+                entity.getDni(),
+                entity.getTipoDeCuenta(),
+                entity.getPremium());
     }
 
     public static List<UserResource> toResourceFromEntityList(List<User> entities) {
