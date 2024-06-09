@@ -19,7 +19,7 @@ import java.util.Map;
 import java.util.Optional;
 
 import static org.springframework.http.HttpStatus.CREATED;
-@CrossOrigin(origins = "http://localhost:4200/   ")
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/api/v1/users")
 public class UserController {

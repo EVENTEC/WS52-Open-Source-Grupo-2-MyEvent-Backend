@@ -10,6 +10,7 @@ public class UserResourceFromEntityAssembler{
 
     public static UserResource toResourceFromEntity(User entity) {
         return new UserResource(
+                entity.getId(),
                 entity.getName(),
                 entity.getSurname(),
                 entity.getCorreo(),
