@@ -5,7 +5,6 @@ import backend.myevent.MyEvent.tickerbuying.interfaces.rest.resources.billresour
 import backend.myevent.MyEvent.tickerbuying.interfaces.rest.transform.billtransform.BillItems.BillItemResourceFromEntityAssembler;
 import backend.myevent.MyEvent.tickerbuying.interfaces.rest.transform.billtransform.BillingDetails.BillingDetailsResourceFromEntityAssembler;
 import backend.myevent.MyEvent.tickerbuying.interfaces.rest.transform.billtransform.ShippingDetails.ShippingDetailsResourceFromEntityAssembler;
-import backend.myevent.MyEvent.tickerbuying.shared.exceptionhandler.NullHandler;
 
 import java.util.stream.Collectors;
 

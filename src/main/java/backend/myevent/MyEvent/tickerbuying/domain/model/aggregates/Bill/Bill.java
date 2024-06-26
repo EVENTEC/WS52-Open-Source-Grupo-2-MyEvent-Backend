@@ -1,7 +1,7 @@
 package backend.myevent.MyEvent.tickerbuying.domain.model.aggregates.Bill;
 
 import backend.myevent.MyEvent.tickerbuying.domain.model.commands.BillCommands.CreateBillCommand;
-import backend.myevent.MyEvent.tickerbuying.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
+import backend.myevent.MyEvent.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 

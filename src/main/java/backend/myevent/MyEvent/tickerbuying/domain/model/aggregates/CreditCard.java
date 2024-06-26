@@ -2,7 +2,7 @@ package backend.myevent.MyEvent.tickerbuying.domain.model.aggregates;
 
 import backend.myevent.MyEvent.tickerbuying.domain.model.commands.CreditCardCommands.CreateCreditCardCommand;
 import backend.myevent.MyEvent.tickerbuying.domain.model.valueobjects.CreditCardValueObjects.*;
-import backend.myevent.MyEvent.tickerbuying.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
+import backend.myevent.MyEvent.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.validation.constraints.NotNull;

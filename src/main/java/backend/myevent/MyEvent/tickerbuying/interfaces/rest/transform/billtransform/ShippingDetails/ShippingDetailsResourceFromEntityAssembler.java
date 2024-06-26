@@ -2,7 +2,7 @@ package backend.myevent.MyEvent.tickerbuying.interfaces.rest.transform.billtrans
 
 import backend.myevent.MyEvent.tickerbuying.domain.model.aggregates.Bill.ShippingDetails;
 import backend.myevent.MyEvent.tickerbuying.interfaces.rest.resources.billresources.ShippingDetailsResource;
-import backend.myevent.MyEvent.tickerbuying.shared.exceptionhandler.NullHandler;
+import backend.myevent.MyEvent.shared.exceptionhandler.NullHandler;
 
 public class ShippingDetailsResourceFromEntityAssembler {
     public static ShippingDetailsResource toResourceFromEntity(ShippingDetails shippingDetails) {

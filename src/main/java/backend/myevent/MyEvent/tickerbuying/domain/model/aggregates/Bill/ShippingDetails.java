@@ -1,7 +1,7 @@
 package backend.myevent.MyEvent.tickerbuying.domain.model.aggregates.Bill;
 
 import backend.myevent.MyEvent.tickerbuying.domain.model.commands.BillCommands.ShippingDetailsCommand;
-import backend.myevent.MyEvent.tickerbuying.shared.exceptionhandler.NullHandler;
+import backend.myevent.MyEvent.shared.exceptionhandler.NullHandler;
 import jakarta.persistence.Embeddable;
 
 @Embeddable
