@@ -31,7 +31,7 @@ public class UserQueryServiceImpl implements UserQueryService {
 
     @Override
     public Optional<User> handle(GetUserByEmailQuery query) {
-        return userRepository.findByCorreo(query.correo());
+        return userRepository.findByName(query.correo());
 
     }
 }

@@ -37,16 +37,16 @@ public class TokenServiceImpl implements BearerTokenService {
         return buildTokenWithDefaultParameters(authentication.getName());
     }
 
-    public String generateToken(String username) {
-        return buildTokenWithDefaultParameters(username);
+    public String generateToken(String correo) {
+        return buildTokenWithDefaultParameters(correo);
     }
 
-    private String buildTokenWithDefaultParameters(String username) {
+    private String buildTokenWithDefaultParameters(String correo) {
         var issuedAt = new Date();
         var expiration = DateUtils.addDays(issuedAt, expirationDays);
         var key = getSigningKey();
         return Jwts.builder()
-                .setSubject(username)
+                .setSubject(correo)
                 .setIssuedAt(issuedAt)
                 .setExpiration(expiration)
                 .signWith(key)
