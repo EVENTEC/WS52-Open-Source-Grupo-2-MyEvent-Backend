@@ -13,9 +13,8 @@ public class UpdateEventCommandFromResourceAssembler {
         Long id = resource.id();
         String eventName = resource.title();
         String eventDescription = resource.description();
-        Date eventStartDate = resource.eventStartDate();
-        Date eventEndDate = resource.eventEndDate();
-        return new UpdateEventCommand(id, eventName, eventDescription, eventStartDate, eventEndDate);
+
+        return new UpdateEventCommand(id, eventName, eventDescription);
     }
     public static UpdateEventCommandWithoutDates toCommandFromResource(UpdateEventWithoutDatesResource resource) {
         Long id = resource.id();

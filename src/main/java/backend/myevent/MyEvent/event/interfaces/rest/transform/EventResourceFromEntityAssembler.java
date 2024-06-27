@@ -10,8 +10,6 @@ public class EventResourceFromEntityAssembler {
                 entity.getName(),
                 entity.getDescription(),
                 entity.getCategory(),
-                entity.getStartDate(),
-                entity.getEndDate(),
                 entity.getLocation(),
                 entity.getOrganizer(),
                 entity.getTotalTickets(),

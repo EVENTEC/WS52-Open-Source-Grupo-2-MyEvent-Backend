@@ -10,8 +10,6 @@ public record EventResource(
         String name,
         String description,
         String category,
-        Date startDate,
-        Date endDate,
         Location location,
         Organizer organizer,
         int totalTickets,

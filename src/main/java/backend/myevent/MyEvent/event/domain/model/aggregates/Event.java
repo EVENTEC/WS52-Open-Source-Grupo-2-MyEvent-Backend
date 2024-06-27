@@ -21,8 +21,8 @@ public class Event {
     @Column(length = 10000)
     private String description;
     private String category;
-    private Date startDate;
-    private Date endDate;
+    //private Date startDate;
+    //private Date endDate;
     @Embedded
     private Location location;
     @Embedded
@@ -35,13 +35,11 @@ public class Event {
     }
 
     // Constructor completo
-    public Event(Long id, String name, String description, String category, Date startDate, Date endDate, Location location, Organizer organizer, int totalTickets, double priceTicket) {
+    public Event(Long id, String name, String description, String category, Location location, Organizer organizer, int totalTickets, double priceTicket) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.category = category;
-        this.startDate = startDate;
-        this.endDate = endDate;
         this.location = location;
         this.organizer = organizer;
         this.totalTickets = totalTickets;
@@ -52,8 +50,6 @@ public class Event {
     public Event(CreateEventCommand command) {
         this.name = command.eventName();
         this.description = command.eventDescription();
-        this.startDate = command.eventStartDate();
-        this.endDate = command.eventEndDate();
         // Los campos location, organizer y totalTickets no están presentes en CreateEventCommand
 
     }
@@ -65,8 +61,6 @@ public class Event {
         }
         this.name = command.eventName();
         this.description = command.eventDescription();
-        this.startDate = command.eventStartDate();
-        this.endDate = command.eventEndDate();
         // Los campos location, organizer y totalTickets no están presentes en UpdateEventCommand
         // Puedes agregarlos si son necesarios
     }
@@ -112,22 +106,6 @@ public class Event {
 
     public void setCategory(String category) {
         this.category = category;
-    }
-
-    public Date getStartDate() {
-        return startDate;
-    }
-
-    public void setStartDate(Date startDate) {
-        this.startDate = startDate;
-    }
-
-    public Date getEndDate() {
-        return endDate;
-    }
-
-    public void setEndDate(Date endDate) {
-        this.endDate = endDate;
     }
 
     public Location getLocation() {

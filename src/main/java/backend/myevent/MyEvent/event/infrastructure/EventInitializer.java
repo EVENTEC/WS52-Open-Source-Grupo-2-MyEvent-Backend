@@ -200,8 +200,6 @@ public class EventInitializer {
         event.setName(name);
         event.setDescription(description);
         event.setCategory(category);
-        event.setStartDate(new Date());
-        event.setEndDate(new Date());
         event.setLocation(new Location(locationName, locationAddress, locationCity, locationCountry));
         event.setOrganizer(new Organizer(organizerName, organizerAddress, organizerPhone));
         event.setTotalTickets(totalTickets);
