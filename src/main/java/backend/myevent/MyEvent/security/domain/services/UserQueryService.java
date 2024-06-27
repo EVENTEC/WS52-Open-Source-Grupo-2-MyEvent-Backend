@@ -1,6 +1,6 @@
 package backend.myevent.MyEvent.security.domain.services;
 
-import backend.myevent.MyEvent.news.domain.model.aggregates.User;
+import backend.myevent.MyEvent.security.domain.models.aggregates.User;
 import backend.myevent.MyEvent.security.domain.models.queries.GetAllUsersQuery;
 import backend.myevent.MyEvent.security.domain.models.queries.GetUserByEmailQuery;
 import backend.myevent.MyEvent.security.domain.models.queries.GetUserByIdQuery;

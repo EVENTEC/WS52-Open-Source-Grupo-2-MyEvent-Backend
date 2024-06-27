@@ -1,7 +1,7 @@
 package backend.myevent.MyEvent.security.infrastructure.persistence.jpa.repositories;
 
 
-import backend.myevent.MyEvent.news.domain.model.aggregates.User;
+import backend.myevent.MyEvent.security.domain.models.aggregates.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

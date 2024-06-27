@@ -1,6 +1,6 @@
 package backend.myevent.MyEvent.security.infrastructure.authorization.sfs.model;
 
-import backend.myevent.MyEvent.news.domain.model.aggregates.User;
+import backend.myevent.MyEvent.security.domain.models.aggregates.User;
 import backend.myevent.MyEvent.security.infrastructure.persistence.jpa.repositories.UserRepository;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;

@@ -3,6 +3,8 @@ package backend.myevent.MyEvent.security.domain.models.aggregates;
 import backend.myevent.MyEvent.security.domain.models.entities.Role;
 import backend.myevent.MyEvent.shared.domain.model.aggregates.AuditableAbstractAggregateRoot;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -21,9 +23,10 @@ public class User extends AuditableAbstractAggregateRoot<User> {
     @Column(nullable = false)
     private String surname;
 
-    @Column(nullable = false)
     private String correo;
 
+    @NotBlank
+    @Size(max = 120)
     @Column(nullable = false)
     private String password;
 
@@ -52,14 +55,17 @@ public class User extends AuditableAbstractAggregateRoot<User> {
         this.roles = new HashSet<>();
     }
 
-    public User(String name, String password) {
+    public User(String name, String surname, String correo, String password, String phone, String dni, String tipoDeCuenta, String premium, List<Role> roles) {
         this.name = name;
+        this.surname = surname;
+        this.correo = correo;
         this.password = password;
-        this.roles = new HashSet<>();
-    }
-
-    public User(String username, String password, List<Role> roles) {
-        this(username, password);
+        this.phone = phone;
+        this.dni = dni;
+        this.tipoDeCuenta = tipoDeCuenta;
+        this.premium = premium;
+        this.dayCreate= LocalDate.now();
+        this.roles = new HashSet<>(roles);
         addRoles(roles);
     }
 
