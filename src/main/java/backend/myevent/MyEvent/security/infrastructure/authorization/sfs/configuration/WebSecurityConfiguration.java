@@ -70,6 +70,7 @@ public class WebSecurityConfiguration {
                                 "/api/v1/authentication/sign-up",
                                 "/v3/api-docs/**",
                                 "/api/v1/**",
+                                "/api/v1/events",
                                 "/swagger-ui.html",
                                 "/swagger-ui/**",
                                 "/swagger-resources/**",
