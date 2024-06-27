@@ -6,10 +6,11 @@ import backend.myevent.MyEvent.event.domain.model.commands.UpdateEventCommand;
 import backend.myevent.MyEvent.event.domain.model.commands.UpdateEventCommandWithoutDates;
 import jakarta.persistence.*;
 
-
 import java.util.Date;
 
+
 @Entity
+@Table(name = "events")
 public class Event {
 
     @Id
